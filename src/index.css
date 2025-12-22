@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  font-family: sans-serif;
+  background-color: rgb(215, 215, 215);
+}
+
+#gameArea {
+  position: relative;
+  width: 600px;
+  height: 200px;
+  border: 2px solid black;
+  overflow: hidden;
+  margin-bottom: 10px;
+  background-color: whitesmoke;
+}
+
+#dino {
+  position: absolute;
+  bottom: 0;
+  left: 40px;
+  font-size: 35px;
+  
+  
+}
+
+#obstacle {
+  position: absolute;
+  bottom: 0;
+  
+  font-size: 25px;
+}
+#score{
+  font-size: 20px;
+}
+button.restart {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: rgba(96, 1, 1, 0.886);
+  background-color: whitesmoke;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  border-color: rgba(96, 1, 1, 0.886);
+  transition: background-color 0.3s, color 0.3s, transform 0.2s;
+}
+button.restart:hover{
+  background-color: rgba(96, 1, 1, 0.205);
+  color: whitesmoke;
+  transform: translateY(-1px);
+}
+button.start{
+  padding: 10px 20px;
+  font-size: 16px;
+  color: rgba(24, 90, 24, 0.886);
+  background-color: whitesmoke;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  border-color: rgba(24, 90, 24, 0.886);
+  transition: background-color 0.3s, color 0.3s, transform 0.2s;
+}
+button.start:hover{
+  background-color: rgba(24, 90, 24, 0.205);
+  color: whitesmoke;
+  transform: translateY(-1px);
+}
+.gameOver{
+  color: rgba(96, 1, 1, 0.886);
+}
