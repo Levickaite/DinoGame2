@@ -21,6 +21,8 @@ export default function DinoGame() {
     const [isPlaying, setIsPlaying] = useState(false);
     const [isGameOver, setIsGameOver] = useState(false);
 
+    const[showTapHint, setShowTapHint]= useState (true);
+
 
 
 useEffect(() => {
@@ -101,9 +103,9 @@ useEffect(() => {
 
 useEffect(() => {
     const handleKeyDown = e=>{
-        if ((e.key === ' ' || e.key === 'Space') && isPlaying) {
+        if ((e.key === ' ' || e.key === 'Space') && !isGameOver) {
             e.preventDefault()
-            if (!isJumping) setIsJumping(true);
+            handleJump();
         }
     }
     document.addEventListener('keydown', handleKeyDown);
@@ -111,7 +113,13 @@ useEffect(() => {
     },[isPlaying, isJumping]);
 
     const handleJump = () => {
-        if (!isJumping && isPlaying) setIsJumping(true);
+        if (!isPlaying) {
+            startGame();
+            setIsJumping(true);
+            setShowTapHint(false);
+            return
+        }
+        if (!isJumping) setIsJumping(true);
     }
 
 
@@ -125,8 +133,12 @@ const startGame = () => {
     setDinoY(0);
     setIsJumping(false);
     setHasScored(false);
+    setShowTapHint(false);
 }
-const resetGame = () => startGame();
+const resetGame = () => {
+    startGame(); 
+    setShowTapHint(true);
+}
 
 if (isGameOver) {
     return (
@@ -149,6 +161,9 @@ if (isGameOver) {
       <h1>Dino Game</h1>
 
       <div id="gameArea">
+        {showTapHint && !isPlaying && !isGameOver && (
+            <div className='tapHint'>TAP TO JUMP</div>
+        )}
         <div id="dino"
         style={{
             position: 'absolute',
