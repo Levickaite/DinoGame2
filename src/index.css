@@ -91,6 +91,7 @@ button.start:hover{
   }
   #gameArea {
     width: 100%;
+    aspect-ratio: 3/1;
     height: 150px;
     touch-action: manipulation;
   }
@@ -102,8 +103,8 @@ button.start:hover{
 #obstacle {
   font-size: 20px;
 }
-button.restart, button.start {
-  width: 100%;
+ button.start {
+  width: 30%;
   font-size: 14px;
   padding: 8px 16px;
 }
