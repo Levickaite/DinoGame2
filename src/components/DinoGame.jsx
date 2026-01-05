@@ -37,8 +37,8 @@ useEffect(() => {
                 if (!hasScored && idx===0 && nextX + obstacleWidth < dinoX){
                     setScore (s=>{
                         const newScore = s + 1;
-                        //increase speed every 16 points
-                        if (newScore % 16 === 0) {
+                        //increase speed every 7 points
+                        if (newScore % 7 === 0) {
                             setSpeed(sp => sp + 0.5);
                         }
                         return newScore;
@@ -87,13 +87,13 @@ useEffect(() => {
 useEffect(() => {
     setObstacles(prevObs =>{
         const newObs= [...prevObs];
-        if (score >=10 && prevObs.length ===1) {
+        if (score >=8 && prevObs.length ===1) {
             newObs.push({x: gameAreaWidth + 300});
         }
-        if (score >=20 && prevObs.length ===2) {
+        if (score >=16 && prevObs.length ===2) {
             newObs.push({x: gameAreaWidth + 600});
         }
-        if (score >=30 && prevObs.length ===3) {
+        if (score >=24 && prevObs.length ===3) {
             newObs.push({x: gameAreaWidth + 900});
         }
         return newObs;

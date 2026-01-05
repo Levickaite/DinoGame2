@@ -1,16 +1,66 @@
-# React + Vite
+# Dino game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is my personal interpretation of the classic Google Dino game that appears when there is no internet connection.
 
-Currently, two official plugins are available:
+While technically not the most complex project I’ve built, it is one of the most meaningful to me. Games were one of the main reasons I chose to pursue programming in the first place, and this project reflects that origin.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+# Live Demo
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Play the game here:
+🔗 https://dino-gamev2.vercel.app/
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# Game Concept
+
+The gameplay is intentionally simple:
+
+- The dinosaur runs continuously
+- Obstacles move toward the player
+- The goal is to jump at the right time and avoid collisions
+- Each successfully passed obstacle increases the score
+
+---
+
+# Features
+
+- Obstacles move from right to left
+- Score increases over time
+- Dynamic difficulty:
+  - Obstacle speed increases after reaching certain score thresholds
+  - Multiple obstacles can appear simultaneously
+- Randomized obstacle positioning using `Math.random()`, making each run unique
+
+---
+
+# Technologies used: 
+
+- React
+- Vite
+- JavaScript (ES6+)
+- CSS
+
+The game logic is implemented using React state and effects without direct DOM manipulation.
+
+---
+
+# Planned Improvements
+
+- Leaderboard (global or local high scores)
+- Personal best tracking (localStorage)
+- Additional difficulty scaling
+- Improved jump physics
+- Fix a known bug where continuous jumping can prevent the dinosaur from landing, allowing the game to be exploited
+- Flip the dinosaur sprite so it faces the obstacles (currently showing impressive courage by jumping with its back to them)
+
+---
+
+# Notes
+
+This project is not just a technical exercise — it’s a small homage to a simple game that left a lasting impression and played a role in shaping my path into software development.
+
+---
+
+
